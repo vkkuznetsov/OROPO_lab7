@@ -16,7 +16,7 @@ async def process(message: IncomingMessage):
     async with message.process():
         url = message.body.decode()
         logging.info(f'Обрабатываем ссылку: {url}')
-        message.ack()
+        produce(url)
 
 
 async def main():
